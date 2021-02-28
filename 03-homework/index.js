@@ -63,4 +63,5 @@ const isPalindrome = function(palindrome) {
     return wordIsPalindrome;
 }
 
-console.log(`${isPalindrome('sad')}`)
+console.log(`${isPalindrome('ufotofu')}`);
+console.log(`${isPalindrome('great')}`)
