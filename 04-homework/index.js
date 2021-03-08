@@ -9,7 +9,7 @@ function getStudentsPairs(femaleStudents, maleStudents) {
     let studentsPairs = [];
 
     for(let i = 0; i < 3; i++) {
-        studentsPairs[i] = [femaleStudents[i] + ', ' + maleStudents[i]];
+        studentsPairs[i] = [femaleStudents[i], maleStudents[i]];
     }
 
     return studentsPairs;
@@ -22,7 +22,7 @@ function addTopics (pairsOfStudents, themes) {
     let studentsPairsAndTopics = [];
 
     for(let i = 0; i < 3; i++) {
-        studentsPairsAndTopics[i] = [pairsOfStudents[i] + ', ' + themes[i]]
+        studentsPairsAndTopics[i] = [pairsOfStudents[i].join(" і "), themes[i]]
     }
 
     return studentsPairsAndTopics;
@@ -31,23 +31,23 @@ function addTopics (pairsOfStudents, themes) {
 const pairsAndTopics = addTopics(pairsOfStudents, themes);
 console.log(pairsAndTopics);
 
-function addMarks(pairsOfStudents, marks) {
-    let studentsPairsAndMarks = [];
+function addMarks(students, marks) {
+    let studentsAndMarks = [];
     for(let i = 0; i < 6; i++) {
-        studentsPairsAndMarks[i] = [pairsOfStudents[i] + ', ' + marks[i]]
+        studentsAndMarks[i] = [students[i], marks[i]]
     }
 
-    return studentsPairsAndMarks;
+    return studentsAndMarks;
 }
 
-const pairsAndMarks = addMarks(pairsOfStudents, marks);
-console.log(pairsAndMarks);
+const studentsWithMarks = addMarks(students, marks);
+console.log(studentsWithMarks);
 
 function putMarksOnProjects(pairsAndTopics) {
     const markStudentsProjects = [];
     for(let i = 0; i < pairsAndTopics.length; i++) {
         const addedMark = Math.floor(Math.random() * 5) + 1;
-        const markStudents = [pairsAndTopics[i] + ', ' + addedMark];
+        const markStudents = [...pairsAndTopics[i], addedMark];
         markStudentsProjects.push(markStudents);
     }
 
