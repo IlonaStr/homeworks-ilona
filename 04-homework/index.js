@@ -33,6 +33,7 @@ console.log(pairsAndTopics);
 
 function addMarks(students, marks) {
     let studentsAndMarks = [];
+
     for(let i = 0; i < 6; i++) {
         studentsAndMarks[i] = [students[i], marks[i]]
     }
@@ -43,11 +44,18 @@ function addMarks(students, marks) {
 const studentsWithMarks = addMarks(students, marks);
 console.log(studentsWithMarks);
 
+function addedMark(min, max) {
+    const mark = Math.floor(Math.random() * max) + min;
+
+    return mark;
+}
+addedMark();
+
 function putMarksOnProjects(pairsAndTopics) {
+
     const markStudentsProjects = [];
     for(let i = 0; i < pairsAndTopics.length; i++) {
-        const addedMark = Math.floor(Math.random() * 5) + 1;
-        const markStudents = [...pairsAndTopics[i], addedMark];
+        const markStudents = [...pairsAndTopics[i], addedMark(1, 5)];
         markStudentsProjects.push(markStudents);
     }
 
