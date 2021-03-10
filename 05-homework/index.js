@@ -57,8 +57,30 @@ function getMedian(arr) {
 
         sortedArr = arr.length % 2 !== 0 ? numbers[median] : (numbers[median - 1] + numbers[median]) / 2;
     
-
     return sortedArr;
 }
 
 console.log(getMedian([1, 2, 3, 4]))
+
+//task 5
+
+function filterEvenNumbers(...numbers) {
+    return numbers.filter(el => el % 2 === 1);
+}
+
+console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+//task 6
+
+function countPositiveNumbers(...numbers) {
+    return numbers.filter(el => el > 0).length;
+}
+
+console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+
+//task 7
+
+function getDividedByFive(...numbers) {
+    return numbers.filter(el => el % 5 === 0);
+}
+console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
