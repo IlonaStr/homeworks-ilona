@@ -69,7 +69,20 @@ const students = [{
   //task 5
 
   function getBestStudent(students) {
+    let bestMark = 0;
+    let bestStudent = '';
 
+    for (const i in students) {
+      const studentsMark = getAverageMark(students[i]);
+      if(studentsMark > bestMark) {
+        bestStudent = students[i].name;
+      } 
+    }
+    return bestStudent;
   }
 
-  console.log(getBestStudent(students))
+  console.log(getBestStudent(students));
+
+  //task 6
+
+  
