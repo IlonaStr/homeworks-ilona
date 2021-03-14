@@ -84,5 +84,16 @@ const students = [{
   console.log(getBestStudent(students));
 
   //task 6
-
   
+  function calculateWordLetters(entry) {
+    
+    const smallLetters = entry.toLowerCase().split('');
+    const countLetters = {};
+
+    for (const i of smallLetters) {
+      countLetters[i] = (smallLetters.filter((letter) => i === letter)).length;
+    }
+    return countLetters;
+  }
+  
+  console.log(calculateWordLetters('UnderstaTement'));
