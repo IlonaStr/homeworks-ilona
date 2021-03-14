@@ -56,7 +56,7 @@ const students = [{
     }
   }
 
-  console.log(JSON.stringify(getStudentInfo(students[0])));
+  console.log(`Info on one student`, JSON.stringify(getStudentInfo(students[0])));
 
   //task 4
 
@@ -64,7 +64,7 @@ const students = [{
     return students.map((student) => student.name).sort();
   }
 
-  console.log(getStudentsNames(students));
+  console.log(`Alphabetic order of students`, getStudentsNames(students));
 
   //task 5
 
@@ -81,19 +81,19 @@ const students = [{
     return bestStudent;
   }
 
-  console.log(getBestStudent(students));
+  console.log(`Student with the best marks`, getBestStudent(students));
 
   //task 6
   
   function calculateWordLetters(entry) {
-    
-    const smallLetters = entry.toLowerCase().split('');
-    const countLetters = {};
+  const smallLetters = entry.toLowerCase().split('');
 
-    for (const i of smallLetters) {
-      countLetters[i] = (smallLetters.filter((letter) => i === letter)).length;
-    }
-    return countLetters;
-  }
-  
-  console.log(calculateWordLetters('UnderstaTement'));
+  return smallLetters.reduce((acc, letter) => {
+    let countLetters = 0;
+    if(acc[letter] === undefined) {
+      countLetters = 1;
+    } acc[letter] = countLetters;
+    return acc;
+  }, {})
+}
+  console.log(`How often letters are repeated`, calculateWordLetters('UnderstaTement'));
