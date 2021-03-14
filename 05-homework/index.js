@@ -15,7 +15,7 @@ console.log(getRandomArray(15, 1, 100));
 function getModa(array) {
     let frequentNumber = {};
     let maxFrequent = 0;
-    let mode = [].filter((num) => num % 1 === 0);
+    let mode = [];
 
     for(let i in array) {
         frequentNumber[array[i]] = (frequentNumber[array[i]] || 0) + 1;
@@ -33,17 +33,21 @@ console.log(getModa([1.3, 3, 6, 3, 3, 2, 1.3, 55, 11, 78, 2, 55, 1.3, 77, 57, 87
 //task 3
 
 function getAverage(array) {
-    let total = 0;
-    let count = array.length;
+    // let total = 0;
+    // let count = array.length;
 
-    for(let i in array) {
+    // for(let i in array) {
 
-        if(Number.isInteger(+i)) {
-            total += array[i];
-        }
-    }
+    //     if(Number.isInteger(+i)) {
+    //         total += array[i];
+    //     }
+    // }
 
-    return total / count;
+    // return total / count;
+
+    const count = array.filter(num => Number.isInteger(num));
+    const result = count.reduce((total, el) => total + el) / count.length;
+    return result;
 }
 
 console.log(getAverage([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]))
@@ -51,11 +55,11 @@ console.log(getAverage([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]))
 //task 4
 
 function getMedian(arr) {
-    let sortedArr = 0;
     const median = Math.floor(arr.length / 2);
-    let numbers = [...arr].sort((a, b) => a - b);
+    let numbers = arr.sort((a, b) => a - b);
 
-        sortedArr = arr.length % 2 !== 0 ? numbers[median] : (numbers[median - 1] + numbers[median]) / 2;
+    const sortedArr = arr.length % 2 !== 0 ? numbers[median] 
+    : (numbers[median - 1] + numbers[median]) / 2;
     
     return sortedArr;
 }
@@ -65,7 +69,7 @@ console.log(getMedian([1, 2, 3, 4]))
 //task 5
 
 function filterEvenNumbers(...numbers) {
-    return numbers.filter(el => el % 2 === 1);
+    return numbers.filter(el => el % 2);
 }
 
 console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9));
