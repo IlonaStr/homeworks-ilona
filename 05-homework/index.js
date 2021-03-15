@@ -12,39 +12,36 @@ console.log(getRandomArray(15, 1, 100));
 
 //task 2
 
-function getModa(array) {
-    let frequentNumber = {};
-    let maxFrequent = 0;
-    let mode = [];
+function getModa(...array) {
+    const arrayValues = {};
+    const arrayNumbers = [...array];
+    arrayNumbers.sort((a, b) => a - b)
+    
+    arrayNumbers.forEach (i => {
+        arrayValues[i] = arrayValues[i] + 1 || 1
+    }, [])
 
-    for(let i in array) {
-        frequentNumber[array[i]] = (frequentNumber[array[i]] || 0) + 1;
+    let moda = [];
+    let countDigits = 1;
 
-        if(frequentNumber[array[i]] > maxFrequent) {
-            maxFrequent = frequentNumber[array[i]];
-            mode = array[i];
+    for (let num in arrayValues) {
+        if(arrayValues[num] > countDigits) {
+            countDigits = arrayValues[num];
+            moda = num;
+        } else if (arrayValues[num] === countDigits) {
+            moda.push(num)
         }
     }
+    return moda  
+    }
 
-    return mode;
-}
-console.log(getModa([1.3, 3, 6, 3, 3, 2, 1.3, 55, 11, 78, 2, 55, 1.3, 77, 57, 87, 23, 2, 56, 3, 55]));
+   
+
+console.log(getModa(1.3, 3, 6, 3, 3, 2, 1.3, 55, 11, 78, 2, 55, 1.3, 77, 57, 87, 23, 2, 56, 3, 55));
 
 //task 3
 
 function getAverage(array) {
-    // let total = 0;
-    // let count = array.length;
-
-    // for(let i in array) {
-
-    //     if(Number.isInteger(+i)) {
-    //         total += array[i];
-    //     }
-    // }
-
-    // return total / count;
-
     const count = array.filter(num => Number.isInteger(num));
     const result = count.reduce((total, el) => total + el) / count.length;
     return result;
