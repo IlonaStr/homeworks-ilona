@@ -11,7 +11,7 @@ class Student {
     }
 
     get getMarks() {
-        return (this.isDismiss === false) ? this.marks : null
+        return (this.isDismiss === false) ? this.marks : null;
     }
 
     set setMarks(mark) {
@@ -40,5 +40,7 @@ console.log(`Список оцінок Луни: ${studentData.getMarks}`);
 studentData.setMarks = 4;
 console.log(`Додано нову оцінку 4: ${studentData.getMarks}`);
 console.log(`Середня оцінка: `, studentData.getAverageMark());
+studentData.dismiss();
 console.log(`Оцінки після виключення студентки: ${studentData.getMarks}`);
+studentData.recover();
 console.log(`Студентку відновлено, оцінки: ${studentData.getMarks}`)
