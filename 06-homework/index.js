@@ -85,15 +85,15 @@ const students = [{
 
   //task 6
   
-  function calculateWordLetters(entry) {
+  function calculateWordLetters(entry = 'ContInuation') {
   const smallLetters = entry.toLowerCase().split('');
+  let countLetters = {};
 
-  return smallLetters.reduce((acc, letter) => {
-    let countLetters = 0;
-    if(acc[letter] === undefined) {
-      countLetters = 1;
-    } acc[letter] = countLetters;
-    return acc;
-  }, {})
+  smallLetters.forEach(letter => {
+    if(countLetters[letter] === undefined) {
+      countLetters[letter] = 0;
+    } ++countLetters[letter];
+  });
+  return countLetters;
 }
-  console.log(`How often letters are repeated`, calculateWordLetters('UnderstaTement'));
+console.log(`How often letters are repeated`, calculateWordLetters());
