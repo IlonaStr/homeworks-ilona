@@ -27,8 +27,10 @@ const students = [{
   //task 1
   
   function getSubjects(student) {
-    const subjects = Object.keys(student.subjects);
-    return subjects.map(chooseSubject => chooseSubject[0].toUpperCase() + chooseSubject.slice(1).toLowerCase().replace('_', ' '));
+    const subjects = Object?.keys(student.subjects);
+    return subjects.map(chooseSubject => 
+      chooseSubject[0].toUpperCase() + chooseSubject.slice(1).
+      toLowerCase().replace('_', ' '));
   }
 
   console.log(`Return subjects for students:`, getSubjects(students[0]));
@@ -36,7 +38,7 @@ const students = [{
   //task 2
 
   function getAverageMark(students) {
-    const studentsMarks = Object.values(students.subjects).flat();
+    const studentsMarks = Object?.values(students.subjects).flat();
     listOfStudentsWithMarks = studentsMarks.reduce((listOfStudentsWithMarks, mark) => {
       return listOfStudentsWithMarks + mark;
     }, 0);
@@ -90,9 +92,7 @@ const students = [{
   let countLetters = {};
 
   smallLetters.forEach(letter => {
-    if(countLetters[letter] === undefined) {
-      countLetters[letter] = 0;
-    } ++countLetters[letter];
+    countLetters[letter] = countLetters[letter] +1 || 1;
   });
   return countLetters;
 }
