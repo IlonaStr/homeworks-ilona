@@ -1,16 +1,16 @@
-async function getRandomChinese(length) {
-    let i = 0;
-    let time = '';
-    while(i < length) {
-        time += String.fromCharCode(Date.now()).slice(-5);
-        i++;
-
-        await new Promise ((resolve) => {
-            setTimeout(() => {
-                resolve(time);
-            }, 50);
-        })
-    }
-    console.log(time);
+async function getRandomChinese(length = 4) {
+  let phrase = 0;
+  let i = 0;
+  while (i < length) {
+    await new Promise((resolve) => {
+      let date = Date.now();
+      phrase += String.fromCharCode(date.toString()).slice(-5);
+      i++;
+      setTimeout(() => {
+        resolve(phrase);
+      }, 50);
+    });
+  }
+  console.log(phrase);
 }
-getRandomChinese(4)
+getRandomChinese();
