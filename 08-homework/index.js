@@ -11,17 +11,15 @@ class Student {
     }
 
     get getMarks() {
-        return (this.isDismiss === false) ? this.marks : null;
+        return !this.isDismiss ? this.marks : null;
     }
 
     set setMarks(mark) {
-        return (this.isDismiss === false) ? this.marks.push(mark) : null
+        return !this.isDismiss ? this.marks.push(mark) : null
     }
 
     getAverageMark() {
-        return this.marks.reduce((allMarks, mark) => 
-        allMarks + mark, 
-        0) / this.marks.length;
+        return this.marks.reduce((allMarks, mark) => allMarks + mark, 0) / this.marks.length;
     }
 
     dismiss() {
@@ -39,7 +37,7 @@ console.log(`Інформація про студентку: `, studentData.getI
 console.log(`Список оцінок Луни: ${studentData.getMarks}`);
 studentData.setMarks = 4;
 console.log(`Додано нову оцінку 4: ${studentData.getMarks}`);
-console.log(`Середня оцінка: `, studentData.getAverageMark());
+console.log(`Середня оцінка: `, Math.round(studentData.getAverageMark()));
 studentData.dismiss();
 console.log(`Оцінки після виключення студентки: ${studentData.getMarks}`);
 studentData.recover();
