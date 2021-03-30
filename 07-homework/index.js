@@ -2,6 +2,9 @@ const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
 const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
 const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
+function randomSalary(maxSalary, minSalary) {
+    return randomSalaryAmount = Math.floor(Math.random() * (maxSalary - minSalary)) + minSalary;
+}
 //task 1
 
 function getMyTaxes(salary) {
@@ -29,16 +32,14 @@ console.log(`Amount of taxes paid in every country: `, getTotalTaxes.call(ukrain
 //task 4
 
 function getMySalary(country) {
-    const minSalary = 1500;
-    const maxSalary = 2000;
+    const salary = randomSalary(1500, 2000);
     
-    const randomSalaryAmount = Math.floor(Math.random() * (maxSalary - minSalary)) + minSalary;
-    const taxes = +(this.tax * randomSalaryAmount).toFixed(2);
+    const taxes = +(this.tax * salary).toFixed(2);
         
     return {
-            salary: randomSalaryAmount,
-            taxes: taxes,
-            profit: randomSalaryAmount - taxes,
+    salary,
+    taxes,
+    profit: salary - taxes,
     }
 }
 
