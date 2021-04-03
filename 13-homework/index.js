@@ -1,4 +1,4 @@
-const { default: axios } = require("axios");
+// const { default: axios } = require("axios");
 
 const list = document.querySelector('#list');
 const actors = document.querySelector('#get-actors');
@@ -11,8 +11,23 @@ function getPlanets() {
 }
 
 function getActors() {
-    let episodeNum = document.querySelector()
+    let episodeNum = document.querySelector('#episode_num').value;
     axios.get(`https://swapi.dev/api/films/${episodeNum}/`)
+    .then((res) => {
+        const actorsPage = res.data.characters;
+        list.innerHTML = `<h2 class="title">Actors<h2>`;
+        for(let i = 0; i < actorsPage.length; i++) {
+            axios.get(`https${actorsPage[i].substring(4)}`).then((result) => {
+                const actor = document.createElement('div');
+                actor.className = "actor";
+                actor.innerHTML = `
+                Name: ${result.data.name};<br>
+                Birth_year: ${result.data.birth_year};<br>
+                `
+                list.appendChild(actor);
+            })
+        }
+    })
 }
 
 function getPlanetsPage(num) {
@@ -34,12 +49,12 @@ function getPlanetsPage(num) {
 
         next.id = 'next';
         next.className = 'pressed-button';
-        back.id = 'previous';
-        back.className = 'pressed-button';
+        previous.id = 'previous';
+        previous.className = 'pressed-button';
         next.setAttribute('type', 'button');
         next.setAttribute('value', 'next');
         previous.setAttribute('type', 'button');
-        previous.setAttribute('value', 'back');
+        previous.setAttribute('value', 'previous');
         list.appendChild(previous);
         list.appendChild(next);
 
@@ -49,7 +64,7 @@ function getPlanetsPage(num) {
             page = 1
             getPlanetsPage(page)
         });
-        back.addEventListener('click', function() {
+        previous.addEventListener('click', function() {
             page--;
             if(page === 0)
             page = 6
