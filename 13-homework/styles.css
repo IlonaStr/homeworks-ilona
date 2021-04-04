@@ -82,6 +82,14 @@ ul {
   text-align: center;
   list-style-type: none;
 }
-li {
-  padding-top: 15px;
+
+.gender {
+  margin: 0px 0px 45px;
+}
+.size {
+  margin: 0px 0px 45px;
+}
+
+h2 {
+  font-size: xx-large;
 }
