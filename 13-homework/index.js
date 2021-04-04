@@ -6,14 +6,13 @@ planets.addEventListener("click", getPlanets);
 let page = 1;
 
 function getPlanets() {
-    getPlanetsPage(page);
+  getPlanetsPage(page);
 }
-
 
 function getActors() {
   axios.get(`https://swapi.dev/api/films/${2}/`).then((res) => {
     const actorsPage = res.data.characters;
-    list.innerHTML = `<h2 class="title">Actors<h2>`;
+    list.innerHTML = `<h2>Actors<h2>`;
     for (let i = 0; i < actorsPage.length; i++) {
       axios.get(`https${actorsPage[i].substring(4)}`).then((result) => {
         const actor = document.createElement("li");
@@ -26,13 +25,12 @@ function getActors() {
         list.appendChild(actor);
       });
     }
-});
+  });
 }
 
-
-  function getPlanetsPage(num) {
-    list.innerHTML = `<h2 class="title">Planets</h2>`;
-     axios.get(`https://swapi.dev/api/planets/?page=${num}`).then((res) => {
+function getPlanetsPage(num) {
+  list.innerHTML = `<h2>Planets</h2>`;
+  axios.get(`https://swapi.dev/api/planets/?page=${num}`).then((res) => {
     for (let i = 0; i < res.data.results.length; i++) {
       const planet = document.createElement("li");
       planet.className = "planet";

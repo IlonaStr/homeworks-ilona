@@ -79,10 +79,9 @@ ul {
   font-family: "Akaya Kanadaka", cursive;
   font-size: large;
   color: whitesmoke;
-
   text-align: center;
   list-style-type: none;
 }
 li {
-    padding-top: 15px;
+  padding-top: 15px;
 }
