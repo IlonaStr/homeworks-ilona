@@ -1,3 +1,88 @@
+body {
+  background-color: black;
+  background-image: -webkit-gradient(
+      radial,
+      50% 50%,
+      2,
+      50% 50%,
+      40,
+      from(white),
+      color-stop(0.1, rgba(248, 255, 128, 0.5)),
+      to(transparent)
+    ),
+    -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 30, from(white), color-stop(0.1, rgba(255, 186, 170, 0.4)), to(transparent)),
+    -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 40, from(rgba(255, 255, 255, 0.9)), color-stop(0.05, rgba(251, 255, 186, 0.3)), to(transparent)),
+    -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 30, from(rgba(255, 255, 255, 0.4)), color-stop(0.03, rgba(253, 255, 219, 0.2)), to(transparent));
+  background-image: -moz-radial-gradient(
+      circle,
+      #ffffff 2px,
+      rgba(248, 255, 128, 0.5) 4px,
+      transparent 40px
+    ),
+    -moz-radial-gradient(circle, #ffffff 1px, rgba(255, 186, 170, 0.4) 3px, transparent
+          30px),
+    -moz-radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, rgba(
+            251,
+            255,
+            186,
+            0.3
+          )
+          2px, transparent 40px),
+    -moz-radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(
+            253,
+            255,
+            219,
+            0.2
+          )
+          1px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 270px, 220px 200px;
+  background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+}
+
 button {
-    font-family: 'Akaya Kanadaka', cursive;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: xx-large;
+  color: #ffffff;
+  background: transparent;
+  height: 60px;
+  width: 250px;
+  display: block;
+  position: relative;
+  border: 1px solid white;
+  margin: 10px auto;
+  border-radius: 6px;
+  border: 2px solid;
+}
+button:hover {
+  background: rgb(205, 209, 207);
+}
+
+input {
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: large;
+  color: #ffffff;
+  background: transparent;
+  height: 50px;
+  width: 160px;
+  display: table;
+  position: relative;
+  border: 1px solid white;
+  margin: 10px auto;
+  border-radius: 6px;
+  border: 2px solid;
+}
+input:hover {
+  background: rgb(205, 209, 207);
+}
+
+ul {
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: large;
+  color: whitesmoke;
+
+  text-align: center;
+  list-style-type: none;
+}
+li {
+    padding-top: 15px;
 }
