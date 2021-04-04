@@ -46,25 +46,20 @@ function getPlanetsPage(num) {
     const next = document.createElement("input");
     const previous = document.createElement("input");
 
-    next.id = "next";
-    next.className = "pressed-button";
-    previous.id = "previous";
-    previous.className = "pressed-button";
     next.setAttribute("type", "button");
     next.setAttribute("value", "next");
+    list.appendChild(next);
+
     previous.setAttribute("type", "button");
     previous.setAttribute("value", "previous");
     list.appendChild(previous);
-    list.appendChild(next);
 
     next.addEventListener("click", function () {
       page++;
-      if (page === 7) page = 1;
       getPlanetsPage(page);
     });
     previous.addEventListener("click", function () {
       page--;
-      if (page === 0) page = 6;
       getPlanetsPage(page);
     });
   });
