@@ -1,5 +1,5 @@
 async function getRandomChinese(length = 4) {
-  let phrase = 0;
+  let phrase = '';
   let i = 0;
   while (i < length) {
     await new Promise((resolve) => {
