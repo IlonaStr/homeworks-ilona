@@ -1,0 +1,18 @@
+import hw1 from './hw-1';
+import hw2 from './hw-2';
+import hw3 from './hw-3';
+import hw4 from './hw-4';
+import hw5 from './hw-5';
+import hw6 from './hw-6';
+import hw7 from './hw-7';
+import hw8 from './hw-8';
+import hw10 from './hw-10';
+// console.log(hw1);
+// console.log(hw2);
+// console.log(hw3);
+// console.log(hw4);
+// console.log(hw5);
+// console.log(hw6);
+// console.log(hw7);
+// console.log(hw8);
+// console.log(hw10);
