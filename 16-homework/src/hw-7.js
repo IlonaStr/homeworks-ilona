@@ -1,5 +1,4 @@
-const hw7 = () => {
-    const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
+const ukraine = { tax: 0.195, middleSalary: 1789, vacancies: 11476 };
 const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
 const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
@@ -14,7 +13,7 @@ function getMyTaxes(salary) {
     return salaryTaxes
 }
 
-console.log(`The amount of taxes paid is: `, getMyTaxes.call(litva, 3000));
+// console.log(`The amount of taxes paid is: `, getMyTaxes.call(litva, 3000));
 
 //task 2
 
@@ -23,7 +22,7 @@ function getMiddleTaxes(country) {
     return averageTaxesPaid
 }
 
-console.log(`Get average taxes: `, getMiddleTaxes.call(latvia));
+// console.log(`Get average taxes: `, getMiddleTaxes.call(latvia));
 
 //task 3
 
@@ -32,7 +31,7 @@ function getTotalTaxes(country) {
     return totalTaxesPaid
 }
 
-console.log(`Amount of taxes paid in every country: `, getTotalTaxes.call(ukraine));
+// console.log(`Amount of taxes paid in every country: `, getTotalTaxes.call(ukraine));
 
 //task 4
 
@@ -48,11 +47,9 @@ function getMySalary(country) {
     }
 }
 
-setInterval(() => {
-    console.log(`Get data after 10 sec `, getMySalary.call(ukraine));
-}, 10000)
+// setInterval(() => {
+//     console.log(`Get data after 10 sec `, getMySalary.call(ukraine));
+// }, 10000)
 
 
-}
-
-export default hw7;
+export {ukraine, latvia, litva, getMyTaxes, getMiddleTaxes, getTotalTaxes, getMySalary};

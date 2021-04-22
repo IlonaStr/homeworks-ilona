@@ -1,5 +1,4 @@
-const hw5 = () => {
-    //task 1
+  //task 1
 
 function getRandomArray(length, min, max) {
     const randomArr = [];
@@ -9,7 +8,7 @@ function getRandomArray(length, min, max) {
   
     return randomArr;
   }
-  console.log(getRandomArray(15, 1, 100));
+  // console.log(getRandomArray(15, 1, 100));
   
   //task 2
   
@@ -36,31 +35,31 @@ function getRandomArray(length, min, max) {
     return moda;
   }
   
-  console.log(
-    getModa(
-      1.3,
-      3,
-      6,
-      3,
-      3,
-      2,
-      1.3,
-      55,
-      11,
-      78,
-      2,
-      55,
-      1.3,
-      77,
-      57,
-      87,
-      23,
-      2,
-      56,
-      3,
-      55
-    )
-  );
+  // console.log(
+  //   getModa(
+  //     1.3,
+  //     3,
+  //     6,
+  //     3,
+  //     3,
+  //     2,
+  //     1.3,
+  //     55,
+  //     11,
+  //     78,
+  //     2,
+  //     55,
+  //     1.3,
+  //     77,
+  //     57,
+  //     87,
+  //     23,
+  //     2,
+  //     56,
+  //     3,
+  //     55
+  //   )
+  // );
   
   //task 3
   
@@ -70,7 +69,7 @@ function getRandomArray(length, min, max) {
     return result;
   }
   
-  console.log(getAverage([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]));
+  // console.log(getAverage([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2]));
   
   //task 4
   
@@ -86,7 +85,7 @@ function getRandomArray(length, min, max) {
     return sortedArr;
   }
   
-  console.log(getMedian([1, 2, 3, 4]));
+  // console.log(getMedian([1, 2, 3, 4]));
   
   //task 5
   
@@ -94,7 +93,7 @@ function getRandomArray(length, min, max) {
     return numbers.filter((el) => el % 2);
   }
   
-  console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9));
+  // console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9));
   
   //task 6
   
@@ -102,17 +101,16 @@ function getRandomArray(length, min, max) {
     return numbers.filter((el) => el > 0).length;
   }
   
-  console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+  // console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
   
   //task 7
   
   function getDividedByFive(...numbers) {
     return numbers.filter((el) => el % 5 === 0);
   }
-  console.log(
-    getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
-  );
+  // console.log(
+  //   getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
+  // );
   
-}
 
-export default hw5;
+export {getRandomArray, getModa, getAverage, getMedian, filterEvenNumbers, countPositiveNumbers, getDividedByFive};

@@ -1,4 +1,4 @@
-const hw3 = () => {
+
     //task 1
 
 const getMaxDigit = function (number) {
@@ -13,7 +13,7 @@ const getMaxDigit = function (number) {
   
     return maxDigit;
   };
-  console.log(`${getMaxDigit(5497)}`);
+  // console.log(`${getMaxDigit(5497)}`);
   
   //task 3
   
@@ -21,13 +21,13 @@ const getMaxDigit = function (number) {
     return name[0].toUpperCase() + name.slice(1).toLowerCase();
   };
   
-  console.log(`${nameChange("draKe")}`);
+  // console.log(`${nameChange("draKe")}`);
   
   //task 4
   
   const salaryMinusTax = (salary, tax) => salary - (salary * tax) / 100;
   
-  console.log(`${salaryMinusTax(1000, 18 + 1.5)}`);
+  // console.log(`${salaryMinusTax(1000, 18 + 1.5)}`);
   
   //task 5
   
@@ -39,7 +39,7 @@ const getMaxDigit = function (number) {
     );
   };
   
-  console.log(`${getRandomNumber(1, 10)}`);
+  // console.log(`${getRandomNumber(1, 10)}`);
   
   //task 6
   
@@ -57,7 +57,7 @@ const getMaxDigit = function (number) {
     return count;
   };
   
-  console.log(`${countLetter("a", "Abraham")}`);
+  // console.log(`${countLetter("a", "Abraham")}`);
   
   //task 10
   
@@ -72,9 +72,9 @@ const getMaxDigit = function (number) {
     return wordIsPalindrome;
   };
   
-  console.log(`${isPalindrome("ufotofu")}`);
-  console.log(`${isPalindrome("great")}`);
+  // console.log(`${isPalindrome("ufotofu")}`);
+  // console.log(`${isPalindrome("great")}`);
   
-}
 
-export default hw3;
+
+export {getMaxDigit, nameChange, salaryMinusTax, getRandomNumber, countLetter, isPalindrome};

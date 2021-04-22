@@ -1,4 +1,4 @@
-const hw2 = () => {
+
 let initialNumber = null;
 let finalNumber = null;
 
@@ -35,7 +35,7 @@ for(let i = initialNumber; i <= finalNumber; i++) {
     numbersSum += i;
 }
 
-console.log(`The total sum is ${numbersSum}`)
-}
+// console.log(`The total sum is ${numbersSum}`)
 
-export default hw2;
+
+export {initialNumber, finalNumber, numbersSum};

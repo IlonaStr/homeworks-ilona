@@ -1,5 +1,4 @@
-const hw4 = () => {
-    const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
+const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
 const themes = [
   "Диференційне рівняння",
   "Теорія автоматів",
@@ -21,7 +20,7 @@ function getStudentsPairs(femaleStudents, maleStudents) {
 }
 
 const pairsOfStudents = getStudentsPairs(femaleStudents, maleStudents);
-console.log(pairsOfStudents);
+// console.log(pairsOfStudents);
 
 function addTopics(pairsOfStudents, themes) {
   let studentsPairsAndTopics = [];
@@ -34,7 +33,7 @@ function addTopics(pairsOfStudents, themes) {
 }
 
 const pairsAndTopics = addTopics(pairsOfStudents, themes);
-console.log(pairsAndTopics);
+// console.log(pairsAndTopics);
 
 function addMarks(students, marks) {
   let studentsAndMarks = [];
@@ -47,7 +46,7 @@ function addMarks(students, marks) {
 }
 
 const studentsWithMarks = addMarks(students, marks);
-console.log(studentsWithMarks);
+// console.log(studentsWithMarks);
 
 function addedMark(min, max) {
   const mark = Math.floor(Math.random() * max) + min;
@@ -67,8 +66,8 @@ function putMarksOnProjects(pairsAndTopics) {
 }
 
 const markStudents = putMarksOnProjects(pairsAndTopics);
-console.log(markStudents);
+// console.log(markStudents);
 
-}
 
-export default hw4;
+
+export {pairsOfStudents, pairsAndTopics, studentsWithMarks, markStudents};
